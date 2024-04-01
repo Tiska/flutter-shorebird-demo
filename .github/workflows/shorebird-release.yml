@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - shorebird-ci
+      - shorebird-release
 
 env:
   SHOREBIRD_TOKEN: ${{ secrets.SHOREBIRD_TOKEN }}
