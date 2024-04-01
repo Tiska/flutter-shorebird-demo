@@ -25,7 +25,9 @@ jobs:
       - name: 🐦 Setup Shorebird
         uses: shorebirdtech/setup-shorebird@v0
 
+      #- name: 🚀 Shorebird Release
+      #  uses: shorebirdtech/shorebird-release@v0
+      #  with:
+      #    args: "-- --flavor=internal"
       - name: 🚀 Shorebird Release
-        uses: shorebirdtech/shorebird-release@v0
-        with:
-          args: "--flavor=internal"
+        run: shorebird release android --flavor internal
