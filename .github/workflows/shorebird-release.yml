@@ -28,4 +28,4 @@ jobs:
       - name: 🚀 Shorebird Release
         uses: shorebirdtech/shorebird-release@v0
         with:
-          args: "--flavor internal"
+          args: "--flavor=internal"
