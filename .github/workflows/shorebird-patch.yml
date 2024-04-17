@@ -27,4 +27,4 @@ jobs:
       # Note: all signing information (key.properties, etc.) must be set up on
       # this runner for `shorebird patch android` to work.
       - name: 🚀 Shorebird Patch
-        run: shorebird patch android --staging
+        run: shorebird patch android --staging --flavor internal
