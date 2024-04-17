@@ -26,4 +26,4 @@ jobs:
 
       - name: 🚀 Shorebird Release
         #uses: shorebirdtech/shorebird-release@v0
-        run: shorebird release android
+        run: shorebird release android --flavor internal
