@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shorebird_code_push/shorebird_code_push.dart';
 
 void main() {
   runApp(const MyApp());
@@ -6,6 +7,8 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
+    // This is a temporary workaround for
 
   // This widget is the root of your application.
   @override
@@ -55,6 +58,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final shorebirdCodePush = ShorebirdCodePush();
   int _counter = 0;
 
   void _incrementCounter() {
@@ -111,6 +115,25 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            FutureBuilder(
+                future: shorebirdCodePush.currentPatchNumber(),
+                builder: (context, snapshot) {
+                  return Text(
+                  'Shorebird current patch number: ${snapshot.data.toString()}',
+                  style: Theme.of(context).textTheme.headlineMedium,
+                  );
+                },
+            ),
+            FutureBuilder(
+              future: shorebirdCodePush.isNewPatchAvailableForDownload(),
+              builder: (context, snapshot) {
+                return
+                  Text(
+                    'Shorebird Update Available: ${snapshot.data.toString()}',
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  );
+              },
             ),
           ],
         ),
